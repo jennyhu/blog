@@ -16,7 +16,7 @@ Node.js version manager on Windows by GO (一个windows上用Go语言实现的no
 
 git用户
 
-```
+```bash
     git clone git@github.com:Kenshin/gnvm-bin.git
 ```
 
@@ -28,11 +28,9 @@ git用户
 没有安装过node 把gnvm.exe放到自定义的一个目录下，并把这个目录添加到环境变量path中
 然后打开命令行，运行gnvm version输出Current version x.x.x则表示安装成功
 
-```
+```bash
     $ gnvm version
-    Current version 0.1.3
-    Copyright (C) 2014 Kenshin Wang <kenshin@ksria.com>
-    See https://github.com/kenshin/gnvm for more information.
+    Current version 0.1.3    
 ```
 
 *note:通过图形界面设置的环境变量需要在确定并关掉环境变量设置窗口后打开的cmd中才会生效。*
@@ -42,7 +40,7 @@ git用户
 
 gnvm的命令集
 
-```
+```bash
     Usage:
       gnvm
       gnvm [command]
@@ -61,17 +59,17 @@ gnvm的命令集
 
 安装前可能要做一些资源源的配置
 
-```
+```javascript
     > gnvm config INIT 
       Config file C:\Program Files\nodejs\\.gnvmrc init success.
 ```
 
-```
+```javascript
     > gnvm config registry http://dist.u.qiniudn.com
       Set success, registry new value is http://dist.u.qiniudn.com/
 ```
 
-```
+```javascript
     > gnvm update latest
     > gnvm ls
     > gnvm node-version
@@ -83,25 +81,25 @@ gnvm的命令集
 
 `latest` 已安装的可用node.exe 版本，可通过gnvm use x.x.x切换成global.
 
-```
+```javascript
     > gnvm install 0.11.1 
 ```
 
 批量安装多个nodejs版本
 
-```
+```javascript
     > gnvm install 0.11.1 0.11.2 0.11.3
 ```
 
 通过`use` 使用指定nodejs版本
 
-```
+```javascript
     > gnvm use 0.11.1 
 ```
 
 卸载指定`node`版本
 
-```
+```javascript
     > gnvm uninstall 0.11.1 
 ```
 

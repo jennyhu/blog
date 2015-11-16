@@ -18,7 +18,7 @@ layout: default
             <img width="35" height="35" src="{{ site.baseurl }}/assets/images/home.jpg" alt="" />
         </a>
         <time datetime="{{ page.date | date:'%Y-%m-%d' }}">
-          <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a>
+          <a href="{{ site.baseurl }}{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a>
         </time>
        
       </div>
