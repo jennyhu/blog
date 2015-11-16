@@ -9,7 +9,7 @@ npm版本升级和降级
 
 ### 查看当前版本
 
-```git
+```
     > npm -v
      2.14.7
   
@@ -29,7 +29,7 @@ npm版本升级和降级
 ###  npm安装需要的版本
 使用 npm -g install npm@2.9.1 （版本号2.9.1 可以根据已发布的版本随意升级或降级），获取最新版本的npm 文件
 
-```git
+```
     > npm -g install npm@2.9.1
     D:\Program Files\nodejs\node_global\npm -> D:\Program Files\nodejs\node_global\node_modules\npm\bin\npm-cli.js
 npm@2.14.7 D:\Program Files\nodejs\node_global\node_modules\npm
