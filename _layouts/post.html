@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% if page.image %}
+<div class="banner">
+  <div class="inner" style="background-image: url('{{ site.baseurl }}/content/images//{{ page.image }}')">
+    <img src='{{ site.baseurl }}/content/images/{{ page.image }}'>
+    </div>
+</div>
+{% endif %}
+
+<article class="post-content">
+   
+    <header>
+      
+      <div class="meta">
+        <a href="{{ site.baseurl }}/" id="home_link">
+            <img width="35" height="35" src="{{ site.baseurl }}/assets/images/home.jpg" alt="" />
+        </a>
+        <time datetime="{{ page.date | date:'%Y-%m-%d' }}">
+          <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a>
+        </time>
+       
+      </div>
+      <h1>{{ page.title }}</h1>
+    </header>
+
+    <div class="text">
+        {{ content }}
+    </div>
+
+ 
+</article>
+
+{% include footer.html %}
+

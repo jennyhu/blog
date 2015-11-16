@@ -1,0 +1,50 @@
+---
+layout: default
+body_class: "home-template user"
+---
+{% include header.html %}
+
+<div class="page-content">
+  <div class="wrapper">
+    
+      {% for post in site.posts %}
+      <article class="post-item">
+          <div class="inner">
+          {% if post.image %}
+              <div class="image-holder">
+                <a href="{{ post.url | prepend: site.baseurl }}"  style="background-image: url('{{ site.baseurl }}/content/images/{{ post.image }}');">
+                  <img src="{{ site.baseurl }}/content/images/{{ post.image }}">
+              </a>
+            </div>
+          {% endif %}
+
+          <div class="meta">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%B %-d, %Y" }}</a>
+            </time>
+          </div>
+
+          
+             <h1 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+          
+
+          <div class="text">
+              <p>{{ post.excerpt }}</p>
+              <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">继续阅读</a>
+          </div>
+
+          </div>
+      </article>
+      {% endfor %}
+
+      {% include pagination.html %}
+
+   
+  </div>
+</div>
+
+<script type="text/javascript" src="{{ '/assets/javascripts/jquery.pagination.js' | prepend: site.baseurl }}"></script>
+  
+
+
+{% include footer.html %}

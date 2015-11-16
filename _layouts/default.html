@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="page-container">
+
+        {{ content }}
+
+        {{ if site.logo}}
+        <a href="{{ site.baseurl | prepend: site.url }}" id="blog_badge">
+            <span style="background-image:
+            url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">{{ site.name }}</span>
+        </a>
+        {{/if}}
+    </div>
+    
+  </body>
+
+</html>
