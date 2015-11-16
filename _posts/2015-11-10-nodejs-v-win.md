@@ -59,17 +59,17 @@ gnvm的命令集
 
 安装前可能要做一些资源源的配置
 
-```javascript
+```bash
     > gnvm config INIT 
       Config file C:\Program Files\nodejs\\.gnvmrc init success.
 ```
 
-```javascript
+```bash
     > gnvm config registry http://dist.u.qiniudn.com
       Set success, registry new value is http://dist.u.qiniudn.com/
 ```
 
-```javascript
+```bash
     > gnvm update latest
     > gnvm ls
     > gnvm node-version
