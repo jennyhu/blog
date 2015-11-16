@@ -4,7 +4,7 @@ logo: logo.png
 email: 839460688@qq.com
 description: 好记性不如赖笔头
 url: "" # the base hostname & protocol for your site
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
 
 
 # Build settings
