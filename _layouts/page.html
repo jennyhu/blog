@@ -4,8 +4,8 @@ image: header.jpg
 ---
 {% if page.image %}
 <div class="banner">
-  <div class="inner" style="background-image: url('/content/images/{{ page.image }}')">
-    <img src='/content/images/{{ page.image }}'>
+  <div class="inner" style="background-image: url('{{ site.baseurl }}/content/images/{{ page.image }}')">
+    <img src='{{ site.baseurl }}/content/images/{{ page.image }}'>
     </div>
 </div>
 {% endif %}
