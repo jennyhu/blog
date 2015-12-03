@@ -86,7 +86,7 @@ blockquote{
 }
 .highlight .err {
     color: #960050;
-    background-color: #1e0010;
+    //background-color: #1e0010;
 }
 .highlight .k {
     color: #66d9ef;
@@ -189,4 +189,18 @@ blockquote{
 }
 .highlight .il {
     color: #ae81ff;
+}
+
+
+.highlight{
+    .language-css{
+
+        .err{
+            color: #fff;
+        }
+        .nl{
+            color: #66d9ef;
+        }
+
+    }
 }

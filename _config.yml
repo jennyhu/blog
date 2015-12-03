@@ -10,4 +10,4 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog/
 # Build settings
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "footnotes", "highlight", "strikethrough", "underline", "autolink", "tables", "with_toc_data", "quote"]
