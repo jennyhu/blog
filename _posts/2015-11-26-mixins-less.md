@@ -118,12 +118,17 @@ LESS一种动态样式语言，LESS 将 CSS 赋予了动态语言的特性，如
 
 我们可以在一个选择器中嵌套另一个选择器来实现继承，这样很大程度减少了代码量，并且代码看起来更加的清晰。
 
+*注意 & 符号的使用—如果你想写串联选择器，而不是写后代选择器，就可以用到 ` &  `了. 这点对伪类尤其有用如 :hover 和 :focus.*
+
 ```css
     /*less*/
     #header {
         h1 {
             font-size: 26px;
             font-weight: bold;
+            &.title{
+                color:#f00;
+            }
         }
         p { font-size: 12px;
             a { 
@@ -140,15 +145,12 @@ LESS一种动态样式语言，LESS 将 CSS 赋予了动态语言的特性，如
         font-size: 26px;
         font-weight: bold;
     }
-    #header p {
-        font-size: 12px;
-    }
-    #header p a {
-        text-decoration: none;
-    }
-    #header p a:hover {
-        border-width: 1px;
-    }
+
+    #header h1.title{ color:#f00; }
+    #header p { font-size: 12px; }
+    #header p a { text-decoration: none; }
+    #header p a:hover { border-width: 1px; }
+      
 ```
 
 <br/>
@@ -187,6 +189,44 @@ LESS一种动态样式语言，LESS 将 CSS 赋予了动态语言的特性，如
 
 ```
 <br/>
+
+
+### Color函数
+LESS 提供了一系列的颜色运算函数. 颜色会先被转化成 HSL 色彩空间, 然后在通道级别操作:
+
+```css
+
+    @color:#333;
+
+    .c1{ lighten(@color, 20%); /*颜色变浅20%*/ }
+    .c2{ darken(@color, 20%); /*颜色加深20%*/ }
+
+    /*改变颜色饱和度*/
+    .c3{ saturate(@color, 20%); /*颜色加色20%*/ }
+    .c4{ desaturate(@color, 20%);/*颜色去色20%*/ }
+
+    .c5{ fadein(@color, 10%); }
+    .c6{ fadeout(@color, 10%); }
+    .c7{ fade(@color, 50%); }
+
+    .c8{ spin(@color, 10); }
+    .c9{ spin(@color, -10); }
+
+    .c10{ mix(@color1, @color2);}
+
+```
+
+
+### Math 函数
+
+```css
+    round(1.67); /*returns `2`*/
+    ceil(2.4);   /* returns `3`*/
+    floor(2.6);  /* returns `2`*/
+
+    percentage(0.5); /* returns `50%`*/
+```
+
 
 ### 注释:
 
