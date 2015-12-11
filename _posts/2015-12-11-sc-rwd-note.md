@@ -29,7 +29,7 @@ author: 古月云希
 .col-xs-15     /* 25% */           
 .col-xs-20     /* 33.33333% */     
 .col-xs-24     /* 40% */           
-.col-xs-30     /* 80% */           
+.col-xs-30     /* 50% */           
 .col-xs-36     /* 60% */           
 .col-xs-40     /* 66.66667% */     
 .col-xs-45     /* 75% */
@@ -60,14 +60,7 @@ author: 古月云希
 
 ```
 
-
-#### 四种区间
-- xs区间  <751px
--  s区间  min-width:752px   752-1021
--  m区间  min-width:1022px  1022-1231
--  l区间  min-width:1232px  >1232
-
-
+<br/>
 
 
 ### 二、引入js
@@ -145,48 +138,71 @@ author: 古月云希
         </style>
     </head>
     <body>
-
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-xs-60 col-s-30">
-                    <div class="inner" style="background-color: #ecb5e9;">col-1</div>
-                </div>
-                <div class="col-xs-60 col-s-30">
-                    <div class="inner" style="background-color: #91fb7c;">col-2</div>
-                </div>
+    <div class="container">   
+        <div class="row">
+            <div class="col-xs-60 col-s-30">
+                <div class="inner" style="background-color: #ecb5e9;">col-1</div>
             </div>
-            <!-- /两列布局 -->
-            
-            <div class="row">
-                <div class="col-xs-60 col-s-20">
-                    <div class="inner" style="background-color: #ecb5e9;">col-1</div>
-                </div>
-                <div class="col-xs-60 col-s-20">
-                    <div class="inner" style="background-color: #7ce2fb;">col-2</div>
-                </div>
-                <div class="col-xs-60 col-s-20">
-                    <div class="inner" style="background-color: #fbca7c;">col-3</div>
-                </div>
+            <div class="col-xs-60 col-s-30">
+                <div class="inner" style="background-color: #91fb7c;">col-2</div>
             </div>
-            <!-- /三列布局 -->
-            
-            <div class="row">
-                <div class="col-xs-60 col-s-30 col-m-15">
-                    <div class="inner"  style="background-color: #ecb5e9;">col-1</div>
-                </div>
-                <div class="col-xs-60 col-s-30 col-m-15">
-                    <div class="inner" style="background-color: #7ce2fb;">col-2</div>
-                </div>
-                <div class="col-xs-60 col-s-30 col-m-15">
-                    <div class="inner"  style="background-color: #fbca7c;">col-3</div>
-                </div>
-                <div class="col-xs-60 col-s-30 col-m-15">
-                    <div class="inner" style="background-color: #eefb7c;">col-4</div>
-                </div>          
-            </div>
-            <!-- /四列布局 -->
         </div>
+        <!-- /两列布局 -->
+        
+        <div class="row">
+            <div class="col-xs-60 col-s-20">
+                <div class="inner" style="background-color: #ecb5e9;">col-1</div>
+            </div>
+            <div class="col-xs-60 col-s-20">
+                <div class="inner" style="background-color: #7ce2fb;">col-2</div>
+            </div>
+            <div class="col-xs-60 col-s-20">
+                <div class="inner" style="background-color: #fbca7c;">col-3</div>
+            </div>
+        </div>
+        <!-- /三列布局 -->
+        
+        <div class="row">
+            <div class="col-xs-60 col-s-30 col-m-15">
+                <div class="inner"  style="background-color: #ecb5e9;">col-1</div>
+            </div>
+            <div class="col-xs-60 col-s-30 col-m-15">
+                <div class="inner" style="background-color: #7ce2fb;">col-2</div>
+            </div>
+            <div class="col-xs-60 col-s-30 col-m-15">
+                <div class="inner"  style="background-color: #fbca7c;">col-3</div>
+            </div>
+            <div class="col-xs-60 col-s-30 col-m-15">
+                <div class="inner" style="background-color: #eefb7c;">col-4</div>
+            </div>          
+        </div>
+        <!-- /四列布局 -->
+
+        <!-- 需求如下布局：
+        xs 区间 : 1, 2, 3 每个宽度100%
+        s 区间 : 1, 2, 3 等分并排
+        m 区间 : 出现 4，同时 1, 2, 3, 4 等分并排
+        l 区间 : 出现 5，同时 1, 2, 3 等分并排，4, 5 另起一行且等分并排 
+        -->
+        <div class="row">
+            <div class="col-xs-60 col-s-20 col-m-15 col-l-20">
+                <div class="inner" style="background-color: #ecb5e9;">col-1</div>
+            </div>
+            <div class="col-xs-60 col-s-20 col-m-15 col-l-20">
+                <div class="inner" style="background-color: #91fb7c;">col-2</div>
+            </div>
+            <div class="col-xs-60 col-s-20 col-m-15 col-l-20">
+                <div class="inner" style="background-color: #fbca7c;">col-3</div>
+            </div>
+            <div class="col-m-15 hidden-s hidden-xs col-l-30">
+                <div class="inner" style="background-color: #f00;">col-4</div>
+            </div>
+
+            <div class="col-m-15 hidden-s hidden-xs hidden-m col-l-30">
+                <div class="inner" style="background-color: #a60a62;">col-5</div>
+            </div>
+        </div>
+    </div>
     </body>
 
     <script type="text/javascript">
