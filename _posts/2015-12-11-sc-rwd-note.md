@@ -228,3 +228,6 @@ author: 古月云希
     </html>
 
 ```
+
+### 参考
+- [首页引导](http://activities.alibaba.com/alibaba/new_user_guide_2015.php)
