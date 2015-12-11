@@ -6,7 +6,74 @@ author: 古月云希
 
 阿里巴巴国际站自适应布局使用说明：
 
-## 
+### 一、引入css文件
+
+兼容ie8浏览器，注意css引入顺序
+
+```html 
+    <!--[if IE 8]>
+        <link href="http://style.aliunicorn.com/css/6v/apollo/core/rwd-sc-ie8.css" rel="stylesheet" type="text/css" media="all" />
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="http://style.aliunicorn.com/css/6v/apollo/core/rwd-sc.css" />
+```
+
+
+#### 自适应布局说明：
+
+
+
+
+### 二、引入js
+
+我们使用 js 来判断浏览器窗口的宽度，并且计算当前所处的区间
+在不支持 media query 的浏览器中，网页必须依赖 rwd.js 和 响应式 CSS 框架的补丁文件来进行
+
+```js
+
+    // 给html标签加rwd
+    var html = document.getElementsByTagName('html')[0];
+    if(html.className.indexOf('rwd') === -1){
+        html.className += 'rwd';
+    }
+
+    seajs.use('js/6v/lib/icbu/rwd/_dev/src/rwd', function (rwd) {
+
+        rwd.onBreakpoint(function (currentClass, previousClass) {
+            console.log('== breakpoint change ==',   
+              '\n[getRwd]:', rwd.getRwd(), /* 当前响应式区间 */
+              '\n[getRwdClass]:', rwd.getRwdClass(), /* 当前响应式区间 css class */
+              '\n[isRwd]:', rwd.isRwd, /* 是否通过 < html class="rwd" > 开启响应式监听模式 */
+              '\n[isJsHack]:', rwd.isJsHack /* 是否在不支持 media query 的浏览器上开启 js hack 模式，比如 IE8  */
+            );
+        });
+    });
+```
+
+加载rwd.js之后，html class的变化
+
+```html 
+    <!-- [XS] -->
+    <html class="rwd rwd-xs">
+    <!-- [XS] in ie8 -->
+    <html class="rwd rwd-xs ie-xs">
+
+    <!-- [S] -->
+    <html class="rwd rwd-s">
+    <!-- [S] in ie8 -->
+    <html class="rwd rwd-s ie-xs ie-s">
+
+    <!-- [M] -->
+    <html class="rwd rwd-m">
+    <!-- [M] in ie8 -->
+    <html class="rwd rwd-m ie-xs ie-s ie-m">
+
+    <!-- [L] -->
+    <html class="rwd rwd-l">
+    <!-- [L] in ie8 -->
+    <html class="rwd rwd-l ie-xs ie-s ie-m ie-l">
+
+```
 
 
 ### template 如下
