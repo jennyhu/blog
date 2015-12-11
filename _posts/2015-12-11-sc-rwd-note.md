@@ -17,11 +17,13 @@ author: 古月云希
 
     <link rel="stylesheet" type="text/css" href="http://style.aliunicorn.com/css/6v/apollo/core/rwd-sc.css" />
 ```
-
+<br/>
 
 #### 12列栅格化布局：
 
 ```CSS
+
+/*栅格化12列*/
 .col-xs-10     /* 16.66667% */     
 .col-xs-12     /* 20% */            
 .col-xs-15     /* 25% */           
@@ -34,8 +36,30 @@ author: 古月云希
 .col-xs-48     /* 80% */
 .col-xs-50     /* 83.33333% */
 .col-xs-60     /* 100% */
+
+
+/*四种区间*/
+
+/*xs区间: <751*/
+.col-xs-NUMBER{}
+
+/*s区间:>=752*/
+@media(min-width:752px){
+    .col-s-NUMBER{}
+}
+
+/*m区间：>=1022 */
+@media(min-width:1022px){
+    .col-m-NUMBER{}
+}
+
+/*l区间：>=1232px */
+@media(min-width:1232px){
+    .col-l-NUMBER{}
+}
+
 ```
-<br/>
+
 
 #### 四种区间
 - xs区间  <751px
