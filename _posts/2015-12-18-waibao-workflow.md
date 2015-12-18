@@ -36,7 +36,8 @@ author: 古月云希
 
 **外包同学的模块名必须以wb-开头，否则无法提交模块**
 
-参数
+*参数*
+
 - MODNAME, 模块名称
 - -m, --module 创建模块
 - -p, --page创建模块（源码页面）
@@ -48,6 +49,7 @@ author: 古月云希
 ```
 
 *参数*
+
 - -f,--flash 同步最新 schema 版本 hash 到模块
 
 **注意：在发布之前需要先配置schema数据，通知tms获取最新的schema的数据结构。**
@@ -63,6 +65,7 @@ author: 古月云希
 ```
 
 *参数*
+
 - -m, --module [name] 调试模块
 - -p, --page [创建模块] 调试（源码页面）
 
@@ -91,6 +94,7 @@ author: 古月云希
 *外包同学因为使用tnpm进行模块创建，所以不需要推送到master，请省略git push origin master的操作*
 
 ### 2、创建预发布分支
+
 ```bash
     > git checkout -b daily/0.0.1
     > git push origin daily/0.0.1  //输入用户名和密码
@@ -123,6 +127,53 @@ author: 古月云希
 
 ## 五、阿里BU
 
+tms.json:
+
+```javascript
+    {
+      "name":"wbZcYunxiTest",
+      "version":"0.0.1",
+      "author": "古月云希",
+      "type":"module",
+      "group":"ali",
+      "description": "description……",
+      "template": {
+            "type": "xtemplate",
+            "ext": ".xtpl",
+            "version": "~4.0.5"
+      },
+      "assets":{
+            "kissy":"^1.4.16",
+            "tb-global":"*",
+            "ali-init":"*"
+      },
+      "widths": [
+            "100%"
+      ],
+      "schema": {
+            "id": "",
+            "version": ""
+      },
+      "screenshot":""
+    }
+
+```
+
+abc.json:
+
+```javascript
+    {
+        "type":"tms",
+        "builder":"@ali/builder-tms",
+        "author": "古月云希",
+        "options": {
+            "packageName": "ali-mod"
+        },
+        "plugins":{
+
+        }
+    }
+```
 
 ## 六、去啊BU
 
